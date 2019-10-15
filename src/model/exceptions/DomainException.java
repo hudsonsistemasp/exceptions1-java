@@ -1,7 +1,9 @@
 package model.exceptions;
 
-/*Exception = o compilador te obriga a tratar , ou seja, o try-catch no Application.
-RuntimeException = o compilador não te obriga a tratar, ou seja, o try-catch no Application*/
+/*Exception = o compilador te obriga a tratar , ou seja, o try-catch no Application e uso da clausula throws Classe de tratamento de erro,
+ * ex: throws DomainException na assinatura do método da classe Reservation nos métodos que usarem o tratamento das exceções.
+RuntimeException = o compilador não te obriga a tratar, ou seja, o try-catch no Application e não precisa usar a clausula throws nas
+classes de tratamento de erro na assinautura do método*/
 
 public class DomainException extends RuntimeException{
 
