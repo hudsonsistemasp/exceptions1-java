@@ -38,12 +38,9 @@ public class Application {
 			System.out.println("Check Out date: dd/mm/yyyy");
 			Date checkOutUpdate = sdf.parse(sc.next());
 			//VERIFICAR AS INCONSISTENCIAS DAS DATAS
-			Date now = new Date();
-			if (checkInUpdate.before(now) || checkOutUpdate.before(now) ) {
-				System.out.println("Error in reservation: Reservation dates for update must be futures date");
-			}
-			else if(checkInUpdate.before(checkOutUpdate)) {
-				System.out.println("Error in resevartion: Check-out date must be after Check-in date");
+			String error = reservation.updateDates(checkInUpdate, checkOutUpdate);
+			if (error != null) {
+				System.out.println("Error in reservation: " + error);
 			}
 			else {
 				reservation.updateDates(checkInUpdate, checkOutUpdate);
